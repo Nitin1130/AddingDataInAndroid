@@ -15,7 +15,8 @@
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-
+            db?.execSQL(TodoTable.CMD_CREATE_TABLE)
+            onCreate(db)
         }
 
 
